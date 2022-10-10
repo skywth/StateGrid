@@ -4,12 +4,32 @@ import com.example.stategrid.Mapper.Class2_Mapper;
 import com.example.stategrid.common.Page;
 import com.example.stategrid.common.Result;
 import com.example.stategrid.entity.test4_entity;
+
+
+import org.springframework.util.ResourceUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
 
 @RestController
 public class Class2_Controller {
@@ -19,21 +39,65 @@ public class Class2_Controller {
 
     //下载
     @GetMapping("/stategrid/companyinfo/basicinfo/import/download")
-    public Result result_Download(){
-        Map<String, Object> data = new LinkedHashMap<>();
-        data=null;
-        return Result.success(data);
+    public Result result_Download(@RequestParam(defaultValue = "") String fileName,HttpServletRequest request,HttpServletResponse response) {
+        if(!fileName.equals("")){
+            //设置文件路径
+            String realPath="C://Users//Administrator//Desktop//stategrid//target//classes//static//files";
+            File file =new File(realPath,fileName);
+            if(file.exists()){
+                response.setContentType("application/force-download");// 设置强制下载不打开
+                response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);// 设置文件名
+                Map<String, Object> data = new LinkedHashMap<>();
+                data=null;
+                return Result.success(data);
+            }
+            else{
+                return Result.error("文件不存在");
+            }
+        }
+        else{
+            return Result.error("文件名未名");
+        }
     }
 
     //上传
+
     @PostMapping("/stategrid/companyinfo/basicinfo/import/upload")
-    public Result result_upload(@RequestParam(defaultValue = "") String file_name){
-        Map<String, Object> data = new LinkedHashMap<>();
-        data=null;
-        if(file_name.equals(""))
+    public Result result_upload(@RequestParam("file") MultipartFile file) throws IOException {
+
+        if(file.getOriginalFilename().equals(""))
             return Result.error("Fail to upload!");
-        else
+        else {
+            System.out.println(file.getOriginalFilename());//文件名
+            System.out.println(file.getContentType());//文件类型
+            System.out.println(file.getSize());//文件大小
+            System.out.println(file.getInputStream());//文件的输入流
+
+            //获得文件上传的路径
+            String path = ResourceUtils.getURL("classpath:").getPath() + "/static/files";
+
+            System.out.println(path);
+            java.io.File newFile = new java.io.File(path);//由于自定义的实体类和java.io.File重名
+            //文件夹不存在则重建
+            if (!newFile.exists()) {
+                newFile.mkdirs();
+            }
+            //上传
+            String fileName = file.getOriginalFilename();
+            file.transferTo(new java.io.File(newFile, fileName));
+            //将文件上传的url存入数据表中
+            System.out.println("文件上传成功");
+            //        Date date = new Date();
+            //        Timestamp time = new Timestamp(date.getTime());//mysql中的日期格式
+            //        File file1=new File(fileName,path,time);
+            //        fileService.addFile(file1);//调用service方法 将文件信息插入数据库
+
+            //        return "redirect:/file";
+
+            Map<String, Object> data = new LinkedHashMap<>();
+            data = null;
             return Result.success(data);
+        }
     }
 
 

@@ -26,10 +26,10 @@ public class API_Controller {
     @PostMapping("/stategrid")
     public Result list_api(){
         Map<String, Object> data = new LinkedHashMap<>();
-        Map<String, Object> m=new LinkedHashMap<>();
-        List list=new ArrayList<>();
-        data.put("m", m);
-        data.put("l",list);
+//        Map<String, Object> m=new LinkedHashMap<>();
+//        List list=new ArrayList<>();
+//        data.put("m", m);
+//        data.put("l",list);
         return Result.success(data);
     }
 
