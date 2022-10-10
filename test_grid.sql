@@ -127,4 +127,37 @@ CREATE TABLE `test6`  (
 -- ----------------------------
 INSERT INTO `test6` VALUES ('2022-9-29', 100);
 
+-- ----------------------------
+-- Table structure for test7
+-- ----------------------------
+DROP TABLE IF EXISTS `test7`;
+CREATE TABLE `test7`  (
+    `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '日期',
+    `day` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '周几',
+    `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '企业名称',
+    `gap` int(255) NULL DEFAULT NULL COMMENT '缺口'
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of test7
+-- ----------------------------
+INSERT INTO `test7` VALUES ('2022-9-29', '星期一','企业1','100');
+
+-- ----------------------------
+-- Table structure for test8
+-- ----------------------------
+DROP TABLE IF EXISTS `test8`;
+CREATE TABLE `test8`  (
+    `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '日期',
+    `day` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '周几',
+    `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '企业名称',
+    `progress` varchar(255) NULL DEFAULT NULL COMMENT '进度'
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of test8
+-- ----------------------------
+INSERT INTO `test8` VALUES ('2022-9-29', '星期一','企业1','50_100');
+
+
 SET FOREIGN_KEY_CHECKS = 1;
