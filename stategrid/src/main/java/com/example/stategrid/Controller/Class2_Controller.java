@@ -6,6 +6,7 @@ import com.example.stategrid.common.Result;
 import com.example.stategrid.entity.test4_entity;
 
 
+import com.sun.deploy.net.URLEncoder;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.LinkedHashMap;
@@ -39,17 +37,34 @@ public class Class2_Controller {
 
     //下载
     @GetMapping("/stategrid/companyinfo/basicinfo/import/download")
-    public Result result_Download(@RequestParam(defaultValue = "") String fileName,HttpServletRequest request,HttpServletResponse response) {
-        if(!fileName.equals("")){
+    public Result result_Download(@RequestParam(defaultValue = "") String fileName,HttpServletRequest request,HttpServletResponse response) throws IOException {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data=null;
+        if (!fileName.equals("")) {
             //设置文件路径
-            String realPath="C://Users//Administrator//Desktop//stategrid//target//classes//static//files";
-            File file =new File(realPath,fileName);
-            if(file.exists()){
-                response.setContentType("application/force-download");// 设置强制下载不打开
-                response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);// 设置文件名
-                Map<String, Object> data = new LinkedHashMap<>();
-                data=null;
-                return Result.success(data);
+            String realPath = "C:/Users/Administrator/Desktop/stategrid/src/file";
+            File file = new File(realPath, fileName);
+            if (file.exists()) {
+                try{
+                    InputStream inputStream = new FileInputStream(file);
+                    response.setContentType("application/force-download");// 设置强制下载不打开
+                    OutputStream out = response.getOutputStream();
+                    response.setHeader("Content-Disposition", "attachment;fileName=" + URLEncoder.encode(fileName, "UTF-8"));// 设置文件名
+                    int b = 0;
+                    byte[] buffer = new byte[1000000];
+                    while (b != -1) {
+                        b = inputStream.read(buffer);
+                        if (b != -1) {
+                            out.write(buffer, 0, b);
+                        }
+                    }
+                    inputStream.close();
+                    out.close();
+                    out.flush();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
             }
             else{
                 return Result.error("文件不存在");
@@ -60,11 +75,12 @@ public class Class2_Controller {
         }
     }
 
+
     //上传
 
     @PostMapping("/stategrid/companyinfo/basicinfo/import/upload")
     public Result result_upload(@RequestParam("file") MultipartFile file) throws IOException {
-
+        
         if(file.getOriginalFilename().equals(""))
             return Result.error("Fail to upload!");
         else {

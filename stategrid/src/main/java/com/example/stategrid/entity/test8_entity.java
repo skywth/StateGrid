@@ -1,4 +1,4 @@
-package src.main.java.com.example.stategrid.entity;
+package com.example.stategrid.entity;
 
 public class test8_entity {
 
