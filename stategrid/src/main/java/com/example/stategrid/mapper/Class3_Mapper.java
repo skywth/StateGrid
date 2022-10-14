@@ -1,4 +1,4 @@
-package com.example.stategrid.Mapper;
+package com.example.stategrid.mapper;
 
 import com.example.stategrid.entity.test5_entity;
 import com.example.stategrid.entity.test6_entity;

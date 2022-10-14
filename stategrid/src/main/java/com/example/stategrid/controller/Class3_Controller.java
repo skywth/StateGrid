@@ -1,7 +1,7 @@
-package com.example.stategrid.Controller;
+package com.example.stategrid.controller;
 
 
-import com.example.stategrid.Mapper.Class3_Mapper;
+import com.example.stategrid.mapper.Class3_Mapper;
 import com.example.stategrid.common.Page;
 import com.example.stategrid.common.Result;
 import com.example.stategrid.common.Result_List;

@@ -1,4 +1,4 @@
-package com.example.stategrid.Mapper;
+package com.example.stategrid.mapper;
 
 import com.example.stategrid.entity.test4_entity;
 import org.apache.ibatis.annotations.Delete;

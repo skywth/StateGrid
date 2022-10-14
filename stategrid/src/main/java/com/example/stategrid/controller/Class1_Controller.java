@@ -1,11 +1,10 @@
-package com.example.stategrid.Controller;
+package com.example.stategrid.controller;
 
-import com.example.stategrid.Mapper.Class1_Mapper;
+import com.example.stategrid.mapper.Class1_Mapper;
 import com.example.stategrid.common.Result;
 import com.example.stategrid.common.Result_List;
 import com.example.stategrid.entity.test3_entity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 

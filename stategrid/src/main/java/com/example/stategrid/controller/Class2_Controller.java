@@ -1,6 +1,6 @@
-package com.example.stategrid.Controller;
+package com.example.stategrid.controller;
 
-import com.example.stategrid.Mapper.Class2_Mapper;
+import com.example.stategrid.mapper.Class2_Mapper;
 import com.example.stategrid.common.Page;
 import com.example.stategrid.common.Result;
 import com.example.stategrid.entity.test4_entity;
@@ -8,7 +8,6 @@ import com.example.stategrid.entity.test4_entity;
 
 import com.sun.deploy.net.URLEncoder;
 import org.springframework.util.ResourceUtils;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,8 +15,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;

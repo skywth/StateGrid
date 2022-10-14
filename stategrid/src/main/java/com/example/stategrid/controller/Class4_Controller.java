@@ -1,11 +1,6 @@
-package com.example.stategrid.Controller;
+package com.example.stategrid.controller;
 
-import com.example.stategrid.Mapper.Class4_Mapper;
-import com.example.stategrid.common.Page;
 import com.example.stategrid.common.Result;
-import com.example.stategrid.common.Result_List;
-import com.example.stategrid.entity.test7_entity;
-import com.example.stategrid.entity.test8_entity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,13 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
 public class Class4_Controller {
     @Resource
-    com.example.stategrid.Mapper.Class4_Mapper test7_Mapper;
+    com.example.stategrid.mapper.Class4_Mapper test7_Mapper;
 
 
     @GetMapping("/stategrid/stategridinfo/schedule/schedule/list")

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.stategrid.Mapper")
+@MapperScan("com.example.stategrid.mapper")
 public class StategridApplication {
 
     public static void main(String[] args) {

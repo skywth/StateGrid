@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Result {
+public class Result<T> {
     private static final int SUCCESS_CODE = 0;
     private static final int ERROR_CODE = 1;
 
     private Integer code;
     private String message = "";
-    private Map<String, Object> data;
+    private T data;
 
     public Integer getCode() {
         return code;
@@ -31,15 +31,16 @@ public class Result {
         this.message = message;
     }
 
-    public Map<String, Object> getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Map<String, Object> data) {
+    public void setData(T data) {
         this.data = data;
     }
 
-    public static Result success(Map<String, Object> data) {
+
+    public static <T> Result success(T data) {
         Result result = new Result();
         result.setCode(SUCCESS_CODE);
         if(data!=null)
