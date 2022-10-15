@@ -1,5 +1,6 @@
 package com.example.stategrid.mapper;
 
+import com.example.stategrid.entity.Gap;
 import com.example.stategrid.entity.test5_entity;
 import com.example.stategrid.entity.test6_entity;
 import org.apache.ibatis.annotations.Insert;
@@ -28,9 +29,10 @@ public interface Class3_Mapper {
     void addInfo_test5(test5_entity test5_info);
 
 
-    @Insert("insert into test6 values (#{date},#{gap})")
+    @Insert("insert into gap(uuid,date,plan_gap,gap) values (#{uuid},#{date},#{plan_gap},#{gap})")
     @Transactional
-    void addInfo_test6(test6_entity test6_info);
+    void addInfo_gap(Gap gap);
+
 
     @Select("select * from test6 where date=#{date}")
     List<test6_entity> findByDate_test6(String date);

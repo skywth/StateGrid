@@ -1,12 +1,14 @@
 package com.example.stategrid.controller;
 
 
+import com.example.stategrid.entity.Gap;
 import com.example.stategrid.mapper.Class3_Mapper;
 import com.example.stategrid.common.Page;
 import com.example.stategrid.common.Result;
 import com.example.stategrid.common.Result_List;
 import com.example.stategrid.entity.test5_entity;
 import com.example.stategrid.entity.test6_entity;
+import com.example.stategrid.utils.UUIDUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +16,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin
 @RestController
+@RequestMapping("/stategridinfo/orderuse")
 public class Class3_Controller {
 
 
@@ -22,7 +26,7 @@ public class Class3_Controller {
     Class3_Mapper test_Mapper;
 
     //查询（有序用电）
-    @GetMapping("/stategrid/stategridinfo/orderuse/candidateinfo/list")
+    @GetMapping("candidateinfo/list")
     public Result findByRelation_test5(@RequestParam(defaultValue = "") String name, @RequestParam(defaultValue = "") String id, @RequestParam(defaultValue = "") String dateRange,@RequestParam(defaultValue = "1") Integer pageNum,       //查找操作
                                        @RequestParam(defaultValue = "1") Integer pageSize){
 
@@ -69,13 +73,14 @@ public class Class3_Controller {
     }
 
     //提交计划（提交缺口信息）
-    @PostMapping("/stategrid/stategridinfo/orderuse/gap/list")
-    public Result addGap_test6(@RequestBody test6_entity test6_info){
+    @PostMapping("gap/list")
+    public Result addGap_test6(@RequestBody Gap gap){
         Map<String, Object> data = new LinkedHashMap<>();
-        if(test6_info.getDate()==null || test6_info.getGap()==null)
+        if(gap.getDate()==null || gap.getPlan_gap()==null || gap.getGap()==null)
             return Result.error("请补充完整信息！");
         else {
-            test_Mapper.addInfo_test6(test6_info);
+            gap.setUuid(UUIDUtil.getUUID32());
+            test_Mapper.addInfo_gap(gap);
             return Result.success(data);
         }
     }
