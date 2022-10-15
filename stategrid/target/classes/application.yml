@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: rm-wz9jl1hu574zl788iwo.mysql.rds.aliyuncs.com
+    url: jdbc:mysql://rm-wz9jl1hu574zl788iwo.mysql.rds.aliyuncs.com/xiaoshan
     username: suep
     password: Suepsuep1
 
@@ -12,3 +12,9 @@ spring:
       max-request-size: 50MB
 server:
   port: 8080
+  servlet:
+    context-path: /stategrid
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
