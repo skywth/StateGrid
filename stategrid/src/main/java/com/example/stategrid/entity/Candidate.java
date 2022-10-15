@@ -5,7 +5,8 @@ public class Candidate {
 
   private long id;
   private String uuid;
-  private java.sql.Date date;
+  private java.sql.Date endDate;
+  private java.sql.Date startDate;
   private long companyId;
   private long quota;
 
@@ -28,12 +29,21 @@ public class Candidate {
   }
 
 
-  public java.sql.Date getDate() {
-    return date;
+  public java.sql.Date getEndDate() {
+    return endDate;
   }
 
-  public void setDate(java.sql.Date date) {
-    this.date = date;
+  public void setEndDate(java.sql.Date endDate) {
+    this.endDate = endDate;
+  }
+
+
+  public java.sql.Date getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(java.sql.Date startDate) {
+    this.startDate = startDate;
   }
 
 
