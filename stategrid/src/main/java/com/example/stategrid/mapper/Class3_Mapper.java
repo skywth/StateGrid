@@ -10,6 +10,14 @@ import java.util.List;
 
 public interface Class3_Mapper {
 
+    @Select("select * from candidate where start_date=#{start_date} and end_date=#{end_date}")
+    List<Candidate> findInfo_candidate(String start_date,String end_date);
+
+    @Select("select * from candidate where start_date=#{start_date} and end_date=#{end_date} and (id=#{id} or id=(select id from company where name=#{name}))")
+    List<Candidate> findRelationInfo_candidate(String start_date,String end_date,String name,long id);
+
+
+
     @Select("select count(id) from company where id in (select company_id from candidate where start_date=#{start_date} and end_date=#{end_date})")
     Integer countAllCompany(String start_date,String end_date);
 
@@ -38,6 +46,6 @@ public interface Class3_Mapper {
 
 
     @Select("select * from gap where date between #{start_date} and #{end_date}")
-    List<test6_entity> findByDate_gap(String start_date,String end_date);
+    List<Gap> findByDate_gap(String start_date,String end_date);
 
 }

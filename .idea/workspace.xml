@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d12ded70-9b89-45ab-b0b4-154a53ceec95" name="Default Changelist" comment="无操作">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9f61a3f9-f71a-4561-9d3c-a0efd4b77f38.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/controller/Class3_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/controller/Class3_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Candidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Gap.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Gap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/test5_entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/CompanyAllInfo_entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/Class3_Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/Class3_Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Candidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Gap.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Gap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/META-INF/stategrid.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Controller/Class3_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Controller/Class3_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Mapper/Class3_Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Mapper/Class3_Mapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/test5_entity.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +218,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -256,7 +259,8 @@
       <updated>1665765979489</updated>
       <workItem from="1665765982658" duration="17592000" />
       <workItem from="1665850190453" duration="4043000" />
-      <workItem from="1665901956266" duration="9286000" />
+      <workItem from="1665901956266" duration="9687000" />
+      <workItem from="1665928519593" duration="5705000" />
     </task>
     <task id="LOCAL-00001" summary="规范部分命名">
       <created>1665767493877</created>
@@ -286,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665853940930</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="无操作">
+      <created>1665911808382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665911808382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

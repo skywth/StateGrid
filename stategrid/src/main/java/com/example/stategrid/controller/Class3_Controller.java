@@ -10,6 +10,7 @@ import com.example.stategrid.utils.UUIDUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,19 +41,46 @@ public class Class3_Controller {
                 page.setTotal(total);
                 page.setCurrentPage(pageNum);
                 page.setPageCount(total / pageSize);
-                List<Company> test5Data = test_Mapper.findByPage_company(start_date,end_date,offset, pageSize);
-
+                List<Company> CompanyData = test_Mapper.findByPage_company(start_date,end_date,offset, pageSize);
+                List<Candidate> CandidateData=test_Mapper.findInfo_candidate(start_date,end_date);
+                List<CompanyAllInfo_entity> CompanyAllInfo = new ArrayList<>();
+                for(int i=0;i<CompanyData.size();i++) {
+                    CompanyAllInfo_entity CAI_entity=new CompanyAllInfo_entity();
+                    CAI_entity.setId(CandidateData.get(i).getCompanyId());
+                    CAI_entity.setName(CompanyData.get(i).getName());
+                    CAI_entity.setType(CompanyData.get(i).getType());
+                    CAI_entity.setBaseline(CompanyData.get(i).getBaseline());
+                    CAI_entity.setCheck("ture");
+                    CAI_entity.setQuotaValue(CandidateData.get(i).getQuota());
+                    double percent=100.0*(1.0*CandidateData.get(i).getQuota()/CompanyData.get(i).getBaseline());
+                    CAI_entity.setQuotaPercentage((int)percent);
+                    CompanyAllInfo.add(i,CAI_entity);
+                }
                 data.put("pageInfo", page);
-                data.put("data", test5Data);
+                data.put("data", CompanyAllInfo);
                 return Result.success(data);
             } else {
                 Integer total = test_Mapper.countByRelationCompany(start_date,end_date,name, id);
                 page.setTotal(total);
                 page.setCurrentPage(pageNum);
                 page.setPageCount(total / pageSize);
-                List<Company> test5Data_rela = test_Mapper.findByRelation_Company(start_date,end_date,name, id, offset, pageSize);
+                List<Company> CompanyData_rela = test_Mapper.findByRelation_Company(start_date,end_date,name, id, offset, pageSize);
+                List<Candidate> CandidateData_rela=test_Mapper.findRelationInfo_candidate(start_date,end_date,name,id);
+                List<CompanyAllInfo_entity> CompanyRelationInfo = new ArrayList<>();
+                for(int i=0;i<CandidateData_rela.size();i++) {
+                    CompanyAllInfo_entity CAI_entity_r=new CompanyAllInfo_entity();
+                    CAI_entity_r.setId(CandidateData_rela.get(i).getCompanyId());
+                    CAI_entity_r.setName(CompanyData_rela.get(i).getName());
+                    CAI_entity_r.setType(CompanyData_rela.get(i).getType());
+                    CAI_entity_r.setBaseline(CompanyData_rela.get(i).getBaseline());
+                    CAI_entity_r.setCheck("ture");
+                    CAI_entity_r.setQuotaValue(CandidateData_rela.get(i).getQuota());
+                    double percent_r=100.0*(1.0*CandidateData_rela.get(i).getQuota()/CompanyData_rela.get(i).getBaseline());
+                    CAI_entity_r.setQuotaPercentage((int)percent_r);
+                    CompanyRelationInfo.add(i,CAI_entity_r);
+                }
                 data.put("pageInfo", page);
-                data.put("data", test5Data_rela);
+                data.put("data", CompanyRelationInfo);
                 return Result.success(data);
             }
         }
@@ -103,7 +131,7 @@ public class Class3_Controller {
         if(start_date.equals("") || end_date.equals(""))
             return Result_List.error("请输入查询起止时间！");
         else{
-            List<test6_entity> Gap_info=test_Mapper.findByDate_gap(start_date,end_date);
+            List<Gap> Gap_info=test_Mapper.findByDate_gap(start_date,end_date);
             return Result_List.success(Gap_info);
         }
     }
