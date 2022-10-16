@@ -3,7 +3,7 @@ package com.example.stategrid.entity;
 
 public class Candidate {
 
-  private long id;
+  private long id=-1;
   private String uuid;
   private java.sql.Date endDate;
   private java.sql.Date startDate;

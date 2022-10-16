@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d12ded70-9b89-45ab-b0b4-154a53ceec95" name="Default Changelist" comment="无操作">
-      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Controller/Class3_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Controller/Class3_Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Mapper/Class3_Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/Mapper/Class3_Mapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/controller/Class3_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/controller/Class3_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Gap.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/entity/Gap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/Class3_Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/Class3_Mapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Candidate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Gap.class" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/target/classes/com/example/stategrid/entity/Gap.class" afterDir="false" />
     </list>
@@ -217,6 +221,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "spring.configuration.checksum": "d2dc758070abe9837d15ff8c304ba782"
   }
 }]]></component>
@@ -251,6 +256,7 @@
       <updated>1665765979489</updated>
       <workItem from="1665765982658" duration="17592000" />
       <workItem from="1665850190453" duration="4043000" />
+      <workItem from="1665901956266" duration="9286000" />
     </task>
     <task id="LOCAL-00001" summary="规范部分命名">
       <created>1665767493877</created>
