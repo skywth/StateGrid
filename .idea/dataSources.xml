@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="aliyun" uuid="7fd86699-7b5f-4c20-a859-ef7d166cf79d">
+    <data-source source="LOCAL" name="aliyun" uuid="f8ad3d35-8265-419a-a237-9805629d1460">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

@@ -3,14 +3,14 @@ package com.example.stategrid.entity;
 
 public class Gap {
 
-  private Long id= Long.valueOf(-1);
+  private long id;
   private String uuid;
   private java.sql.Date date;
-  private Long plan_gap;
-  private Long gap;
+  private long planGap;
+  private long gap;
 
 
-  public Long getId() {
+  public long getId() {
     return id;
   }
 
@@ -37,16 +37,16 @@ public class Gap {
   }
 
 
-  public Long getPlan_gap() {
-    return plan_gap;
+  public long getPlanGap() {
+    return planGap;
   }
 
-  public void setPlan_gap(long plan_gap) {
-    this.plan_gap = plan_gap;
+  public void setPlanGap(long planGap) {
+    this.planGap = planGap;
   }
 
 
-  public Long getGap() {
+  public long getGap() {
     return gap;
   }
 
