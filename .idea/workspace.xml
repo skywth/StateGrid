@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d12ded70-9b89-45ab-b0b4-154a53ceec95" name="Default Changelist" comment="无操作">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7fd86699-7b5f-4c20-a859-ef7d166cf79d.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7fd86699-7b5f-4c20-a859-ef7d166cf79d/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7fd86699-7b5f-4c20-a859-ef7d166cf79d/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7fd86699-7b5f-4c20-a859-ef7d166cf79d/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7fd86699-7b5f-4c20-a859-ef7d166cf79d/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7fd86699-7b5f-4c20-a859-ef7d166cf79d/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8ad3d35-8265-419a-a237-9805629d1460.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8ad3d35-8265-419a-a237-9805629d1460.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/controller/Class3_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/controller/Class3_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/Class3_Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/Class3_Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/GapMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/stategrid/src/main/java/com/example/stategrid/mapper/GapMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,20 +221,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "d2dc758070abe9837d15ff8c304ba782"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d2dc758070abe9837d15ff8c304ba782&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.stategrid.common" />
@@ -277,7 +269,8 @@
       <workItem from="1665901956266" duration="9687000" />
       <workItem from="1665928519593" duration="5705000" />
       <workItem from="1666089585063" duration="4818000" />
-      <workItem from="1666095502813" duration="4679000" />
+      <workItem from="1666095502813" duration="4922000" />
+      <workItem from="1666102174740" duration="1198000" />
     </task>
     <task id="LOCAL-00001" summary="规范部分命名">
       <created>1665767493877</created>
@@ -314,7 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665911808382</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="无操作">
+      <created>1666100926438</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666100926438</updated>
+    </task>
+    <task id="LOCAL-00007" summary="无操作">
+      <created>1666100960632</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666100960632</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

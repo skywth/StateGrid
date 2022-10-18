@@ -10,25 +10,25 @@ import java.util.List;
 
 public interface Class3_Mapper {
 
-    @Select("select * from candidate where start_date between #{start_date} and #{end_date} and end_date between #{start_date} and #{end_date}")
+    @Select("select * from candidate where start_date=#{start_date} and end_date=#{end_date}")
     List<Candidate> findInfo_candidate(String start_date,String end_date);
 
-    @Select("select * from candidate where start_date between #{start_date} and #{end_date} and end_date between #{start_date} and #{end_date} and (id=#{id} or id=(select id from company where name=#{name}))")
-    List<Candidate> findRelationInfo_candidate(String start_date,String end_date,String name,long id);
+    @Select("select * from candidate where start_date=#{start_date} and end_date=#{end_date} and (company_id in (select id from company where company_code=#{companyCode}) or id=(select id from company where name=#{name}))")
+    List<Candidate> findRelationInfo_candidate(String start_date,String end_date,String name,String companyCode);
 
 
 
-    @Select("select count(id) from company where id in (select company_id from candidate where start_date between #{start_date} and #{end_date} and end_date between #{start_date} and #{end_date})")
+    @Select("select count(id) from company where id in (select company_id from candidate where start_date=#{start_date} and end_date=#{end_date})")
     Integer countAllCompany(String start_date,String end_date);
 
-    @Select("select * from company where id in (select company_id from candidate where start_date between #{start_date} and #{end_date} and end_date between #{start_date} and #{end_date}) limit #{offset},#{pageSize}")
+    @Select("select * from company where id in (select company_id from candidate where start_date=#{start_date} and end_date=#{end_date}) limit #{offset},#{pageSize}")
     List<Company> findByPage_company(String start_date, String end_date, Integer offset, Integer pageSize);
 
-    @Select("select count(id) from company where id in (select company_id from candidate where start_date between #{start_date} and #{end_date} and end_date between #{start_date} and #{end_date}) and (name=#{name} or id=#{id})")
-    Integer countByRelationCompany(String start_date,String end_date,String name,long id);
+    @Select("select count(id) from company where id in (select company_id from candidate where start_date=#{start_date} and end_date=#{end_date}) and (name=#{name} or company_code=#{companyCode})")
+    Integer countByRelationCompany(String start_date,String end_date,String name,String companyCode);
 
-    @Select("select * from company where id in (select company_id from candidate where start_date between #{start_date} and #{end_date} and end_date between #{start_date} and #{end_date}) and (name=#{name} or id=#{id}) limit #{offset},#{pageSize}")
-    List<Company> findByRelation_Company(String start_date,String end_date, String name, long id, Integer offset, Integer pageSize);
+    @Select("select * from company where id in (select company_id from candidate where start_date=#{start_date} and end_date=#{end_date}) and (name=#{name} or company_code=#{companyCode}) limit #{offset},#{pageSize}")
+    List<Company> findByRelation_Company(String start_date,String end_date, String name, String companyCode, Integer offset, Integer pageSize);
 
 
     @Insert("insert into candidate(uuid,end_date,start_date,company_id,quota) values (#{uuid},#{endDate},#{startDate},#{companyId},#{quota})")

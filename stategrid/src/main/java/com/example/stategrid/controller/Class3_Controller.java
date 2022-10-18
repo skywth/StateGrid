@@ -26,7 +26,7 @@ public class Class3_Controller {
 
     //查询（有序用电）
     @GetMapping("candidateinfo/list")
-    public Result findByRelation_test5(@RequestParam(defaultValue = "") String name, @RequestParam(defaultValue = "0") long id, @RequestParam(defaultValue = "") String start_date, @RequestParam(defaultValue = "") String end_date, @RequestParam(defaultValue = "1") Integer pageNum,       //查找操作
+    public Result findByRelation_test5(@RequestParam(defaultValue = "") String name, @RequestParam(defaultValue = "") String companyCode, @RequestParam(defaultValue = "") String start_date, @RequestParam(defaultValue = "") String end_date, @RequestParam(defaultValue = "1") Integer pageNum,       //查找操作
                                        @RequestParam(defaultValue = "1") Integer pageSize){
 
         Integer offset = (pageNum - 1) * pageSize;
@@ -36,7 +36,7 @@ public class Class3_Controller {
             return Result.error("请输入日期！");
         }
         else {
-            if (name.equals("") && id==0) {
+            if (name.equals("") && companyCode.equals("")) {
                 Integer total = test_Mapper.countAllCompany(start_date,end_date);
                 page.setTotal(total);
                 page.setCurrentPage(pageNum);
@@ -60,12 +60,12 @@ public class Class3_Controller {
                 data.put("data", CompanyAllInfo);
                 return Result.success(data);
             } else {
-                Integer total = test_Mapper.countByRelationCompany(start_date,end_date,name, id);
+                Integer total = test_Mapper.countByRelationCompany(start_date,end_date,name, companyCode);
                 page.setTotal(total);
                 page.setCurrentPage(pageNum);
                 page.setPageCount((total / pageSize)+1);
-                List<Company> CompanyData_rela = test_Mapper.findByRelation_Company(start_date,end_date,name, id, offset, pageSize);
-                List<Candidate> CandidateData_rela=test_Mapper.findRelationInfo_candidate(start_date,end_date,name,id);
+                List<Company> CompanyData_rela = test_Mapper.findByRelation_Company(start_date,end_date,name, companyCode, offset, pageSize);
+                List<Candidate> CandidateData_rela=test_Mapper.findRelationInfo_candidate(start_date,end_date,name,companyCode);
                 List<CompanyAllInfo_entity> CompanyRelationInfo = new ArrayList<>();
                 for(int i=0;i<CandidateData_rela.size();i++) {
                     CompanyAllInfo_entity CAI_entity_r=new CompanyAllInfo_entity();
