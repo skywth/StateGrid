@@ -40,7 +40,7 @@ public class Class3_Controller {
                 Integer total = test_Mapper.countAllCompany(start_date,end_date);
                 page.setTotal(total);
                 page.setCurrentPage(pageNum);
-                page.setPageCount(total / pageSize);
+                page.setPageCount((total / pageSize)+1);
                 List<Company> CompanyData = test_Mapper.findByPage_company(start_date,end_date,offset, pageSize);
                 List<Candidate> CandidateData=test_Mapper.findInfo_candidate(start_date,end_date);
                 List<CompanyAllInfo_entity> CompanyAllInfo = new ArrayList<>();
@@ -63,7 +63,7 @@ public class Class3_Controller {
                 Integer total = test_Mapper.countByRelationCompany(start_date,end_date,name, id);
                 page.setTotal(total);
                 page.setCurrentPage(pageNum);
-                page.setPageCount(total / pageSize);
+                page.setPageCount((total / pageSize)+1);
                 List<Company> CompanyData_rela = test_Mapper.findByRelation_Company(start_date,end_date,name, id, offset, pageSize);
                 List<Candidate> CandidateData_rela=test_Mapper.findRelationInfo_candidate(start_date,end_date,name,id);
                 List<CompanyAllInfo_entity> CompanyRelationInfo = new ArrayList<>();
@@ -101,25 +101,28 @@ public class Class3_Controller {
 
     //提交计划（提交缺口信息）电力缺口添加数据接口
     @PostMapping("gap/list")
-    public Result addGap(@RequestBody Gap gap){
+    public Result addGap(@RequestBody List<Gap> gap){
         Map<String, Object> data = new LinkedHashMap<>();
-        if(gap.getDate()==null || gap.getPlan_gap()==null || gap.getGap()==null)
+        if(gap.get(0).getDate()==null || gap.get(0).getPlanGap()==0 || gap.get(0).getGap()==0)
             return Result.error("请补充完整信息！");
         else {
-            gap.setUuid(UUIDUtil.getUUID32());
-            test_Mapper.addInfo_gap(gap);
+            for(int i=0;i<gap.size();i++) {
+                gap.get(i).setUuid(UUIDUtil.getUUID32());
+                test_Mapper.addInfo_gap(gap.get(i));
+            }
             return Result.success(data);
         }
     }
 
     //电力缺口修改数据接口
     @PutMapping("gap/list")
-    public Result updateGap(@RequestBody Gap gap){
+    public Result updateGap(@RequestBody List<Gap> gap){
         Map<String, Object> data = new LinkedHashMap<>();
-        if(gap.getId()==null || gap.getDate()==null || gap.getPlan_gap()==null || gap.getGap()==null)
+        if(gap.get(0).getId()==0 || gap.get(0).getDate()==null || gap.get(0).getPlanGap()==0 || gap.get(0).getGap()==0)
             return Result.error("请完善信息");
         else{
-            test_Mapper.updateGap(gap);
+            for(int i=0;i<gap.size();i++)
+                test_Mapper.updateGap(gap.get(i));
             return Result.success(data);
         }
 

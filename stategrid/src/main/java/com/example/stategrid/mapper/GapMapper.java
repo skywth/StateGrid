@@ -1,6 +1,7 @@
 package com.example.stategrid.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.stategrid.entity.Gap;
 
 /**
  * @author Li Ming
