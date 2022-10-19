@@ -36,13 +36,12 @@ public class CompanyinfoBasicinfoController {
     }
 
     /**
-     * @param path 想要下载的文件的路径
      * @param response
      * @功能描述 下载文件:
      */
     @GetMapping("/import/download")
-    public CommonResult download(String path, HttpServletResponse response) {
-        boolean b = companyinfoBasicinfoService.downloadTemplate(path, response);
+    public CommonResult download(HttpServletResponse response) {
+        boolean b = companyinfoBasicinfoService.downloadTemplate(response);
         if (b){
             return null;
         }else {

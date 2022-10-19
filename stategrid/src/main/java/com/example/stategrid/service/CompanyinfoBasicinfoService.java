@@ -2,11 +2,8 @@ package com.example.stategrid.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.stategrid.entity.Company;
-import com.example.stategrid.entity.Notice;
-import com.sun.deploy.net.HttpResponse;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @author Li Ming
@@ -14,7 +11,7 @@ import java.util.List;
  * @create 2022-10-15 14:22
  */
 public interface CompanyinfoBasicinfoService {
-    public boolean downloadTemplate(String path, HttpServletResponse response);
+    public boolean downloadTemplate(HttpServletResponse response);
 
     public Page<Company> getList(int pageNum, int pageSize);
 

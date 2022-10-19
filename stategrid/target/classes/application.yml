@@ -11,7 +11,7 @@ spring:
       max-file-size: 20MB
       max-request-size: 50MB
 server:
-  port: 8080
+  port: 8020
   servlet:
     context-path: /stategrid
 mybatis-plus:
